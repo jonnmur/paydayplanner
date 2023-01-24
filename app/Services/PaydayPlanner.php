@@ -7,9 +7,14 @@ use Carbon\Carbon;
 
 class PaydayPlanner
 {
-    const DAY = 10;
-    const NOTIFY = 3;
+    private const DAY = 10;
+    private const NOTIFY = 3;
 
+    /**
+     * @param int $year
+     * @param int month
+     * @return Payday
+     */
     public static function create(int $year = null, int $month = null): Payday
     {
         $date = Carbon::createFromDate($year, $month, self::DAY);

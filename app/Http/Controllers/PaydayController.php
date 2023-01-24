@@ -10,6 +10,10 @@ use Illuminate\Support\Facades\Validator;
 
 class PaydayController extends Controller
 {
+    /**
+     * @param Request $request
+     * @return Response
+     */
     public function index(Request $request)
     {
         $validator = Validator::make(
