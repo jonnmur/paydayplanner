@@ -10,7 +10,9 @@ class PaydayTest extends TestCase
 {
     public function testApiReturnsPayDatesIfCorrectYearIsProvided()
     {
-        $response = $this->get('/api?year=2020');
+        $response = $this->call('GET', '/api', [
+            'year' => '2020',
+        ]);
  
         $response->assertStatus(200);
 
@@ -70,7 +72,7 @@ class PaydayTest extends TestCase
 
     public function testApiReturnsErrorIfYearIsNotProvided()
     {
-        $response = $this->get('/api');
+        $response = $this->call('GET', '/api');
  
         $response->assertStatus(422);
 
@@ -83,7 +85,9 @@ class PaydayTest extends TestCase
 
     public function testApiReturnsErrorIfInvalidYearIsProvided()
     {
-        $response = $this->get('/api?year=someinvalidyear');
+        $response = $this->call('GET', '/api', [
+            'year' => 'someinvalidyear',
+        ]);
  
         $response->assertStatus(422);
 
@@ -96,7 +100,10 @@ class PaydayTest extends TestCase
 
     public function testApiReturnsErrorIfInvalidMonthIsProvided()
     {
-        $response = $this->get('/api?year=2020&month=someinvalidmonth');
+        $response = $this->call('GET', '/api', [
+            'year' => '2020',
+            'month' => 'someinvalidmonth',
+        ]);
  
         $response->assertStatus(422);
 
@@ -109,7 +116,10 @@ class PaydayTest extends TestCase
 
     public function testApiReturnsOnePayDateIfCorrectYearAndMonthIsProvided()
     {
-        $response = $this->get('/api?year=2020&month=1');
+        $response = $this->call('GET', '/api', [
+            'year' => '2020',
+            'month' => '1',
+        ]);
  
         $response->assertStatus(200);
 
