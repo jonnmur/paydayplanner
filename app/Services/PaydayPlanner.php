@@ -12,7 +12,7 @@ class PaydayPlanner
 
     /**
      * @param int $year
-     * @param int month
+     * @param int $month
      * @return Payday
      */
     public static function create(int $year = null, int $month = null): Payday
