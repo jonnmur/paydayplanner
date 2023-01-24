@@ -6,14 +6,14 @@ use Carbon\Carbon;
 
 class Payday
 {
-    private String $payDate;
-    private String $notifyDate;
+    private string $payDate;
+    private string $notifyDate;
 
     /**
      * @param string $payDate
      * @param string $notifyDate
      */
-    public function __construct(String $payDate, String $notifyDate)
+    public function __construct(string $payDate, string $notifyDate)
     {
         $this->payDate = $payDate;
         $this->notifyDate = $notifyDate;
@@ -22,7 +22,7 @@ class Payday
     /**
      * @return string $payDate
      */
-    public function getPayDate(): String
+    public function getPayDate(): string
     {
         return $this->payDate;
     }
@@ -30,7 +30,7 @@ class Payday
     /**
      * @return string $notifyDate
      */
-    public function getNotifyDate(): String
+    public function getNotifyDate(): string
     {
         return $this->notifyDate;
     }
