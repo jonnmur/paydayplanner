@@ -27,8 +27,6 @@ class PaydayPlanner
             $date->subDays(1);
         }
 
-        $payday = new PayDay($date->format('Y-m-d'), $date->subDays(3)->format('Y-m-d'));
-
-        return $payday;
+        return new PayDay($date->format('Y-m-d'), $date->subDays(3)->format('Y-m-d'));
     }
 }

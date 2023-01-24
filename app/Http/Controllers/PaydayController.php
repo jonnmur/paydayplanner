@@ -25,17 +25,17 @@ class PaydayController extends Controller
         }
 
         if ($request->has('month') && !empty($request->input('month'))) {
-            $payDate = PaydayPlanner::create($request->input('year'), $request->input('month'));
+            $payDay = PaydayPlanner::create($request->input('year'), $request->input('month'));
 
-            return new PaydayResource($payDate);
+            return new PaydayResource($payDay);
         }
 
-        $payDates = [];
+        $payDays = [];
 
         for ($month=1; $month<=12; $month++) {
-            $payDates[] = PaydayPlanner::create($request->input('year'), $month);
+            $payDays[] = PaydayPlanner::create($request->input('year'), $month);
         }
 
-        return PaydayResource::collection($payDates);
+        return PaydayResource::collection($payDays);
     }
 }
