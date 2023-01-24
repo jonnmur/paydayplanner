@@ -9,7 +9,7 @@ class PaydayPlanner
 {
     const DAY = 10;
 
-    public static function create($year, $month)
+    public static function create(int $year = null, int $month = null): Payday
     {
         $date = Carbon::createFromDate($year, $month, self::DAY);
 

@@ -93,4 +93,31 @@ class PaydayTest extends TestCase
             ],
         ]);
     }
+
+    public function testApiReturnsErrorIfInvalidMonthIsProvided()
+    {
+        $response = $this->get('/api?year=2020&month=someinvalidmonth');
+ 
+        $response->assertStatus(422);
+
+        $response->assertJson([
+            'errors' => [
+                'month' => ['The month does not match the format m.'],
+            ],
+        ]);
+    }
+
+    public function testApiReturnsOnePayDateIfCorrectYearAndMonthIsProvided()
+    {
+        $response = $this->get('/api?year=2020&month=1');
+ 
+        $response->assertStatus(200);
+
+        $response->assertJson([
+            'data' => [
+                'payDate' => '2020-01-10',
+                'notifyDate' => '2020-01-07'
+            ],
+        ]);
+    }
 }

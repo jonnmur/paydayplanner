@@ -16,11 +16,18 @@ class PaydayController extends Controller
             $request->all(),
             [
                 'year' => 'required|date_format:Y',
+                'month' => 'date_format:m',
             ],
         );
 
         if ($validator->fails()) {
             return response(['errors' => $validator->errors()], 422);
+        }
+
+        if ($request->has('month') && !empty($request->input('month'))) {
+            $payDate = PaydayPlanner::create($request->input('year'), $request->input('month'));
+
+            return new PaydayResource($payDate);
         }
 
         $payDates = [];
