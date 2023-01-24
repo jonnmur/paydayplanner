@@ -39,8 +39,8 @@ class PaydayTest extends TestCase
 
     public function testNotifyIsSetThreeDaysEarlierThanPayday()
     {
-        $payday = PaydayPlanner::create(2020, 1);
+        $payday = PaydayPlanner::create(2021, 1);
 
-        $this->assertEquals('2020-01-07', $payday->getNotifyDate());
+        $this->assertEquals('2021-01-05', $payday->getNotifyDate());
     }
 }

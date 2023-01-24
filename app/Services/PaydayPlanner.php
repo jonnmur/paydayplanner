@@ -8,6 +8,7 @@ use Carbon\Carbon;
 class PaydayPlanner
 {
     const DAY = 10;
+    const NOTIFY = 3;
 
     public static function create(int $year = null, int $month = null): Payday
     {
@@ -27,6 +28,6 @@ class PaydayPlanner
             $date->subDays(1);
         }
 
-        return new PayDay($date->format('Y-m-d'), $date->subDays(3)->format('Y-m-d'));
+        return new PayDay($date->format('Y-m-d'), $date->subDays(self::NOTIFY)->format('Y-m-d'));
     }
 }
