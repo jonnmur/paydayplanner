@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Http\Resources\Payday as PaydayResource;
-use App\Models\Payday;
+use App\Services\PaydayPlanner;
 use Carbon\Carbon;
-use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class PaydayController extends Controller
 {
@@ -26,7 +26,7 @@ class PaydayController extends Controller
         $payDates = [];
 
         for ($month=1; $month<=12; $month++) {
-            $payDates[] = new Payday($request->input('year'), $month);
+            $payDates[] = PaydayPlanner::create($request->input('year'), $month);
         }
 
         return PaydayResource::collection($payDates);

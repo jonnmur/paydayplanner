@@ -6,7 +6,7 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Tests\TestCase;
  
-class PayDayTest extends TestCase
+class PaydayTest extends TestCase
 {
     public function testApiReturnsPayDatesIfCorrectYearIsProvided()
     {
