@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Http\Resources\Payday as PaydayResource;
 use App\Services\PaydayPlanner;
-use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
