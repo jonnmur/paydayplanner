@@ -17,7 +17,7 @@ class PaydayPlanner
      */
     public static function create(int $year = null, int $month = null): Payday
     {
-        // Convert to date
+        // Convert to carbon date
         $date = Carbon::createFromDate($year, $month, self::DAY);
 
         // Calculate pay date
@@ -33,7 +33,7 @@ class PaydayPlanner
         return new PayDay($payDate->format('Y-m-d'), $notifyDate->format('Y-m-d'));
     }
 
-    private function calcDate($date)
+    private function calcDate(Carbon $date): Carbon
     {
         // Weekend
         if ($date->format('l') === 'Sunday') {
