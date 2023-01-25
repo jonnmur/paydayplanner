@@ -26,7 +26,7 @@
 
 ## Testing
 
-Run `./vendor/bin/phpunit`
++ Run `./vendor/bin/phpunit`
 
 ## Assignment information
 
