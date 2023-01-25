@@ -1,12 +1,12 @@
 ## Setup
 
-1. Clone repo.
+1. Clone repository.
 2. Run `composer install`.
 
 ## Usage
 
 1. Run `php artisan serve` to start the PHP development server.
-2. Make GET requests to `/api?year=2000`
+2. Make GET requests to `/api`, for example: `/api?year=2000` or `/api?year=2000&month=1`.
 
 + `year` query parameter is required and must be a valid year.
 + `month` query parameter is optional and must be a valid month.
@@ -23,6 +23,10 @@
 ## Modified files for this assignment
 
 + /routes/api.php
+
+## Testing
+
+Run `./vendor/bin/phpunit`
 
 ## Assignment information
 
