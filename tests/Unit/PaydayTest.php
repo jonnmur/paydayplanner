@@ -2,7 +2,6 @@
 
 namespace Tests\Unit;
 
-use Carbon\Carbon;
 use App\Services\PaydayPlanner;
 use PHPUnit\Framework\TestCase;
 
