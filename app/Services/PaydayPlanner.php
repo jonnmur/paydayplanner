@@ -23,7 +23,6 @@ class PaydayPlanner
         if ($date->format('l') === 'Sunday') {
             $date->subDays(2);
         }
-
         else if ($date->format('l') === 'Saturday') {
             $date->subDays(1);
         }
