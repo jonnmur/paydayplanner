@@ -33,6 +33,10 @@ class PaydayPlanner
         return new PayDay($payDate->format('Y-m-d'), $notifyDate->format('Y-m-d'));
     }
 
+    /**
+     * @param Carbon $date
+     * @return Carbon $date
+     */
     private function calcDate(Carbon $date): Carbon
     {
         // Weekend
