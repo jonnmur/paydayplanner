@@ -35,7 +35,7 @@ class PaydayPlanner
 
     /**
      * @param Carbon $date
-     * @return Carbon $date
+     * @return Carbon
      */
     private function calcDate(Carbon $date): Carbon
     {
