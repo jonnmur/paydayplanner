@@ -7,8 +7,8 @@ use Carbon\Carbon;
 
 class PaydayPlanner
 {
-    private const DAY = 10;
-    private const NOTIFY = 3;
+    private const DAY = 10; // Default pay day
+    private const NOTIFY = 3; // Notify days before pay day
 
     /**
      * @param int $year
