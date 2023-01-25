@@ -36,5 +36,5 @@
 + If that day is Saturday, the payment day will be moved 1 day earlier.
 + If that day is Holiday on a week day, the payment day will be moved 1 day earlier.
 + Possible clashing holiday is only Good Friday.
-+ When correct payment day is set, set notify date 3 days earlier.
++ When correct payment day is set, set notify date 3 working days earlier.
 + Output is json in freely chosen structure.
