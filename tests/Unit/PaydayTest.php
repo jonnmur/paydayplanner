@@ -36,10 +36,11 @@ class PaydayTest extends TestCase
         $this->assertEquals('2021-01-08', $payday->getPayDate());
     }
 
-    public function testNotifyIsSetThreeDaysEarlierThanPayday()
+    // Planned payday is on 2023-04-10 Monday. Notify day should be then 2023-04-05 Wednesday, but since there is also Good Friday, it gets moved to 2023-04-04.
+    public function testNotifyIsSetThreeWorkingDaysEarlierThanPayday()
     {
-        $payday = PaydayPlanner::create(2021, 1);
+        $payday = PaydayPlanner::create(2023, 4);
 
-        $this->assertEquals('2021-01-05', $payday->getNotifyDate());
+        $this->assertEquals('2023-04-04', $payday->getNotifyDate());
     }
 }

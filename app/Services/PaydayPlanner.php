@@ -17,8 +17,24 @@ class PaydayPlanner
      */
     public static function create(int $year = null, int $month = null): Payday
     {
+        // Convert to date
         $date = Carbon::createFromDate($year, $month, self::DAY);
 
+        // Calculate pay date
+        $payDate = self::calcDate($date);
+
+        // Calculate notify date by checking that each previous day is working day
+        $notifyDate = $payDate->copy();
+
+        for ($i=1; $i<=self::NOTIFY; $i++) {
+            $notifyDate = self::calcDate($notifyDate->subDays(1));
+        }
+
+        return new PayDay($payDate->format('Y-m-d'), $notifyDate->format('Y-m-d'));
+    }
+
+    private function calcDate($date)
+    {
         // Weekend
         if ($date->format('l') === 'Sunday') {
             $date->subDays(2);
@@ -28,10 +44,10 @@ class PaydayPlanner
         }
 
         // Good friday
-        if ($date->format('Y-m-d') === Carbon::createFromDate($year . '-03-21')->addDays(easter_days($year))->subDays(2)->format('Y-m-d')) {
+        if ($date->format('Y-m-d') === Carbon::createFromDate($date->format('Y') . '-03-21')->addDays(easter_days($date->format('Y')))->subDays(2)->format('Y-m-d')) {
             $date->subDays(1);
         }
 
-        return new PayDay($date->format('Y-m-d'), $date->subDays(self::NOTIFY)->format('Y-m-d'));
+        return $date;
     }
 }

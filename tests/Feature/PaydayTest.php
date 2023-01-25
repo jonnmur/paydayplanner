@@ -23,11 +23,11 @@ class PaydayTest extends TestCase
                 ],
                 [
                     'payDate' => '2020-02-10',
-                    'notifyDate' => '2020-02-07'
+                    'notifyDate' => '2020-02-05'
                 ],
                 [
                     'payDate' => '2020-03-10',
-                    'notifyDate' => '2020-03-07'
+                    'notifyDate' => '2020-03-05'
                 ],
                 [
                     'payDate' => '2020-04-09',
@@ -39,7 +39,7 @@ class PaydayTest extends TestCase
                 ],
                 [
                     'payDate' => '2020-06-10',
-                    'notifyDate' => '2020-06-07'
+                    'notifyDate' => '2020-06-05'
                 ],
                 [
                     'payDate' => '2020-07-10',
@@ -47,7 +47,7 @@ class PaydayTest extends TestCase
                 ],
                 [
                     'payDate' => '2020-08-10',
-                    'notifyDate' => '2020-08-07'
+                    'notifyDate' => '2020-08-05'
                 ],
                 [
                     'payDate' => '2020-09-10',
@@ -59,7 +59,7 @@ class PaydayTest extends TestCase
                 ],
                 [
                     'payDate' => '2020-11-10',
-                    'notifyDate' => '2020-11-07'
+                    'notifyDate' => '2020-11-05'
                 ],
                 [
                     'payDate' => '2020-12-10',
