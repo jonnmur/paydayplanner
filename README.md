@@ -17,7 +17,7 @@
 + /app/Http/Resources/Payday.php
 + /app/Models/Payday.php
 + /app/Services/PaydayPlanner.php
-+ /tests/Feature/PayDayTest.php
++ /tests/Feature/PaydayTest.php
 + /tests/Unit/PaydayTest.php
 
 ## Modified files for this assignment
