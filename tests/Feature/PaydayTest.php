@@ -15,7 +15,7 @@ class PaydayTest extends TestCase
  
         $response->assertStatus(200);
 
-        $response->assertJson([
+        $response->assertExactJson([
             'data' => [
                 [
                     'payDate' => '2020-01-10',
@@ -75,7 +75,7 @@ class PaydayTest extends TestCase
  
         $response->assertStatus(422);
 
-        $response->assertJson([
+        $response->assertExactJson([
             'errors' => [
                 'year' => ['The year field is required.'],
             ],
@@ -90,7 +90,7 @@ class PaydayTest extends TestCase
  
         $response->assertStatus(422);
 
-        $response->assertJson([
+        $response->assertExactJson([
             'errors' => [
                 'year' => ['The year does not match the format Y.'],
             ],
@@ -106,7 +106,7 @@ class PaydayTest extends TestCase
  
         $response->assertStatus(422);
 
-        $response->assertJson([
+        $response->assertExactJson([
             'errors' => [
                 'month' => ['The month does not match the format m.'],
             ],
@@ -122,7 +122,7 @@ class PaydayTest extends TestCase
  
         $response->assertStatus(200);
 
-        $response->assertJson([
+        $response->assertExactJson([
             'data' => [
                 'payDate' => '2020-01-10',
                 'notifyDate' => '2020-01-07'
